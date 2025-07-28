@@ -1,114 +1,133 @@
-# Golf Skins Tracker
+# Golf Skins Tracker 🏌️‍♂️
 
-A modern web application for tracking golf skins games and calculating player debts. Perfect for your next golf outing!
+A modern, responsive web application for tracking golf skins games with real-time scoring, rollover calculations, and debt tracking.
 
-## Features
+## 🚀 Live Demo
 
-- **Easy Setup**: Configure skin value and add up to 4 players
-- **Real-time Scoring**: Enter scores hole by hole with automatic skin calculation
-- **Live Updates**: See skins won and debts owed in real-time
-- **Responsive Design**: Works great on desktop, tablet, and mobile
-- **Data Persistence**: Game state is automatically saved to your browser
-- **Export Results**: Download game results as JSON file
-- **Modern UI**: Beautiful, intuitive interface with smooth animations
+[View the live application](https://your-username.github.io/skins-tracker)
 
-## How to Use
+## ✨ Features
 
-### 1. Start the Application
+- **Real-time Scoring**: Track scores for up to 4 players across 18 holes
+- **Rollover System**: Automatic skin rollover when holes are tied
+- **Debt Tracking**: Calculate how much each player owes or is owed
+- **Dynamic Skin Values**: Change skin value during the game with real-time updates
+- **Visual Indicators**: 
+  - Green bars show when skins are won
+  - Yellow bars show when skins roll over
+  - Winner notifications with skin count and value
+- **Game Management**:
+  - Restart game (keeps players and skin value)
+  - Reset individual holes
+  - Export game results
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Data Persistence**: Saves game state locally
 
-```bash
-# Navigate to the project directory
-cd skins-tracker
+## 🎮 How to Play
 
-# Start the local server
-python3 -m http.server 8000
+1. **Setup**: Enter player names and set the skin value
+2. **Start Game**: Click "Start Game" to begin
+3. **Enter Scores**: Input scores for each hole as you play
+4. **Track Progress**: Watch real-time updates of:
+   - Pot value (skins won)
+   - Rollover value (skins in play)
+   - Individual player skins won
+   - Debts owed between players
+5. **Finish**: Export results or start a new game
 
-# Open your browser and go to:
-# http://localhost:8000
-```
+## 🏆 Skins Rules
 
-### 2. Game Setup
+- **Winning**: Lowest score on a hole wins the skin
+- **Ties**: Skin rolls over to the next hole
+- **Rollover**: Multiple ties accumulate skins and value
+- **Winner Takes All**: When a skin is won, the winner receives all accumulated value
 
-1. **Set Skin Value**: Enter the pound amount each skin is worth (default: £5)
-2. **Add Players**: Enter names for up to 4 players (minimum 2 required)
-3. **Optional Handicaps**: Add player handicaps if desired
-4. **Start Game**: Click "Start Game" to begin tracking
+## 💰 Debt Calculation
 
-### 3. Scoring
+- **Fair Share**: Total pot divided equally among all players
+- **Individual Debt**: Difference between skins won and fair share
+- **Positive Values**: Player is owed money
+- **Negative Values**: Player owes money
 
-- **Enter Scores**: For each hole, enter the score for each player
-- **Automatic Calculation**: The app automatically determines who wins each skin
-- **Tie Handling**: If players tie for lowest score, no skin is awarded
-- **Real-time Updates**: See skins won and debts update as you enter scores
-
-### 4. Results & Debts
-
-The app calculates:
-- **Skins Won**: How many skins each player has won
-- **Total Pot**: Total value of all skins in play
-- **Debts Owed**: How much each player owes or is owed
-
-### 5. Game Management
-
-- **New Game**: Start a fresh game (clears all data)
-- **Export Results**: Download game data as JSON file
-- **Auto-save**: Game progress is automatically saved to your browser
-
-## How Skins Work
-
-1. **Each hole is worth one skin** (or the value you set)
-2. **Lowest score wins the skin** for that hole
-3. **Ties result in no skin awarded** (carries over to next hole)
-4. **Final settlement**: Players who won more than their fair share owe money to those who won less
-
-## Example Scenario
-
-- **Skin Value**: £5
-- **Players**: 4 players
-- **Total Skins Won**: 10 skins
-- **Total Pot**: £50
-- **Fair Share**: £12.50 per player
-
-If Player A won 3 skins (£15), they owe £2.50 to the pot.
-If Player B won 1 skin (£5), they are owed £7.50.
-
-## Technical Details
+## 🛠️ Technology
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **No Dependencies**: Pure vanilla JavaScript
-- **Local Storage**: Game state persists in browser
-- **Responsive**: Mobile-first design
-- **Cross-platform**: Works on any modern browser
+- **Styling**: Custom CSS with responsive design
+- **Storage**: LocalStorage for game persistence
+- **Deployment**: GitHub Pages ready
 
-## Browser Compatibility
+## 📱 Browser Support
 
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
 
-## File Structure
+## 🚀 Deployment
+
+### GitHub Pages
+
+1. Fork this repository
+2. Go to Settings > Pages
+3. Select "Deploy from a branch"
+4. Choose `main` branch and `/ (root)` folder
+5. Click "Save"
+
+### Manual Deployment
+
+1. Clone the repository
+2. Serve the files using any static web server:
+   ```bash
+   # Using Python
+   python3 -m http.server 8000
+   
+   # Using Node.js
+   npx serve .
+   
+   # Using PHP
+   php -S localhost:8000
+   ```
+3. Open `http://localhost:8000` in your browser
+
+## 📁 Project Structure
 
 ```
 skins-tracker/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles
-├── script.js           # JavaScript functionality
+├── index.html          # Main application page
+├── styles.css          # Application styling
+├── script.js           # Core game logic
 ├── package.json        # Project metadata
 └── README.md          # This file
 ```
 
-## Tips for Best Experience
+## 🎯 Game Features
 
-1. **Use on Mobile**: Perfect for on-course scoring
-2. **Save Progress**: Game automatically saves as you play
-3. **Export Results**: Download results for record keeping
-4. **Clear Browser Data**: If you want to start completely fresh
+### Real-time Updates
+- Scores update immediately as entered
+- Rollover calculations happen automatically
+- Debt and pot values recalculate instantly
 
-## Troubleshooting
+### Visual Feedback
+- Winner notifications with skin count
+- Color-coded debt amounts (green for positive, red for negative)
+- Rollover indicators on hole cards
 
-- **Game not loading**: Clear browser cache and reload
-- **Scores not saving**: Check if JavaScript is enabled
-- **Export not working**: Try a different browser
+### Data Management
+- Automatic save to localStorage
+- Export game results as JSON
+- Reset individual holes or entire game
 
-Enjoy your golf game! 🏌️‍♂️ 
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+MIT License - feel free to use this project for your own golf games!
+
+## 🏌️‍♂️ Enjoy Your Game!
+
+This application makes tracking golf skins games easy and fun. No more manual calculations or paper scorecards needed! 
