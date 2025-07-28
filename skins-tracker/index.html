@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Skins Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-golf-ball"></i> Golf Skins Tracker</h1>
+            <p class="subtitle">Track your skins game and settle up!</p>
+        </header>
+
+        <div class="game-setup" id="gameSetup">
+            <h2>Game Setup</h2>
+            <div class="setup-form">
+                <div class="form-group">
+                    <label for="skinValue">Skin Value (£):</label>
+                    <input type="number" id="skinValue" value="5" min="1" step="1">
+                </div>
+                <div class="players-section">
+                    <h3>Players</h3>
+                    <div class="players-grid" id="playersGrid">
+                        <div class="player-input">
+                            <input type="text" placeholder="Player 1" class="player-name" data-player="1">
+                            <input type="number" placeholder="Handicap" class="player-handicap" data-player="1" min="0" max="54">
+                        </div>
+                        <div class="player-input">
+                            <input type="text" placeholder="Player 2" class="player-name" data-player="2">
+                            <input type="number" placeholder="Handicap" class="player-handicap" data-player="2" min="0" max="54">
+                        </div>
+                        <div class="player-input">
+                            <input type="text" placeholder="Player 3" class="player-name" data-player="3">
+                            <input type="number" placeholder="Handicap" class="player-handicap" data-player="3" min="0" max="54">
+                        </div>
+                        <div class="player-input">
+                            <input type="text" placeholder="Player 4" class="player-name" data-player="4">
+                            <input type="number" placeholder="Handicap" class="player-handicap" data-player="4" min="0" max="54">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="startGame">Start Game</button>
+            </div>
+        </div>
+
+        <div class="game-board" id="gameBoard" style="display: none;">
+            <div class="game-info">
+                <div class="info-card">
+                    <h3>Skin Value</h3>
+                    <div class="skin-value-control">
+                        <p id="currentSkinValue">£5</p>
+                        <button class="btn btn-sm btn-outline" id="changeSkinValue">
+                            <i class="fas fa-edit"></i> Change
+                        </button>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3>Total Skins</h3>
+                    <p id="totalSkins">0</p>
+                </div>
+                <div class="info-card">
+                    <h3>Pot Value</h3>
+                    <p id="potValue">£0</p>
+                </div>
+                <div class="info-card">
+                    <h3>Rollover Value</h3>
+                    <p id="rolloverValue">£0</p>
+                </div>
+            </div>
+
+            <div class="scoring-section">
+                <h2>Hole Scoring</h2>
+                <div class="holes-grid" id="holesGrid">
+                    <!-- Holes will be generated here -->
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2>Results & Debts</h2>
+                <div class="results-grid">
+                    <div class="skins-won">
+                        <h3>Skins Won</h3>
+                        <div id="skinsWon"></div>
+                    </div>
+                    <div class="debts">
+                        <h3>Debts Owed</h3>
+                        <div id="debts"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-secondary" id="newGame">New Game</button>
+                <button class="btn btn-warning" id="restartGame">Restart Game</button>
+                <button class="btn btn-primary" id="exportResults">Export Results</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
