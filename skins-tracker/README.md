@@ -4,7 +4,7 @@ A modern, responsive web application for tracking golf skins games with real-tim
 
 ## 🚀 Live Demo
 
-[View the live application](https://your-username.github.io/skins-tracker)
+[View the live application](https://ryan-scurfield.github.io/skins-tracker)
 
 ## ✨ Features
 
